@@ -1,0 +1,51 @@
+@startuml Mascota 
+
+class Mascota {
+    -dueño: Dueño
+    +Come: Alimento ()
+    +juega: Juguetes()
+
+}
+class Alimento
+class Juguete 
+class Dueño 
+
+package Alimentos {
+class Carne    
+class Croquetas
+}
+package Juguetes {
+class Pelota   
+class Peluche  
+}
+
+package Cualidades {
+class Nombre  
+class Dueño
+class Especie
+class Color     
+}
+
+package dueño {
+class tristeza 
+class alcoholismo 
+class eriza  
+ }
+
+Alimento "1" --o "*" Mascota
+Mascota o-- Juguete 
+Carne --|> Alimento
+Pelota --|> Juguete
+Peluche --|> Juguete 
+Croquetas --|> Alimento
+Nombre *-- Mascota 
+Dueño *-- Mascota 
+Especie --o Mascota 
+Color o-- Especie 
+Dueño *-- tristeza 
+Dueño *-- eriza 
+Dueño *-- alcoholismo 
+
+
+
+@enduml  
