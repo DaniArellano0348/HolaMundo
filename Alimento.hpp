@@ -11,3 +11,4 @@ class Alimento
                 return this -> Energia;
             }
            }
+           
